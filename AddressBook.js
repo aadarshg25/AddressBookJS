@@ -86,3 +86,11 @@ function deleteAddress(name) {
 function findNumberOfAddress() {
     return addressBook.reduce((count) => count + 1, 0);
 }
+
+//Function to search Person in a particular City or State
+function searchByCityOrState(city, state) {
+    return addressBook.filter(address => 
+        (!city || address.city.toLowerCase() === city.toLowerCase()) || 
+        (!state || address.state.toLowerCase() === state.toLowerCase())
+    );
+}
